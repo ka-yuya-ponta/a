@@ -12,10 +12,10 @@
 <body>
 <p>a</p>
  <select name="" id="">
-   <option value="" onclick="changeBoxColor('#008000');">青</option>
-   <option value="" onclick="changeBoxColor('red');">赤</option>
-   <option value="" onclick="changeBoxColor('green');">緑</option>
-
+   <option value="blue" onchange="changeBoxColor('blue');">青</option>
+   <option value="red" onchange="changeBoxColor('red');">赤</option>
+   <option value="green" onchange="changeBoxColor('green');">緑</option>
+</select>
 
   
   <style>
@@ -26,9 +26,12 @@
   </style>
 <script>
   'use strict'
-  function changeBoxColor( newColor ) {
-    document.querySelector('body').style.backgroundColor = newColor;
+  function changeColor( event) {
+    document.querySelector('body').style.backgroundColor = event.currentTarget.value;
 }
+let select= document.querySelector('select');
+select.addEventListener('change', changeColor);
+
 
  
 
