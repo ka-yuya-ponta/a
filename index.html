@@ -4,64 +4,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  
   <title>Document</title>
 </head>
 <body>
+<p>a</p>
+ <select name="" id="">
+   <option value="" onclick="changeBoxColor('#008000');">青</option>
+   <option value="" onclick="changeBoxColor('red');">赤</option>
+   <option value="" onclick="changeBoxColor('green');">緑</option>
 
-<div id="app">
-  <ul>
-<li v-for='fruit in fruits' :key='fruit.name'>
-  <p>商品名:{{fruit.name}}</p>
-  <p>一個あたりの重さ：{{fruit.weight}}</p>
-  <p>個数:{{fruit.num}}</p>
-  <input type="text" v-model='fruit.num'>
-  <button v-on:click='fruit.num++'>追加</button>
-</li>
-</ul>
-    <p :style='error'>合計個数:{{SumNum}}</p>
-    <p>重さの個数{{SumWeight}}</p>
-    <p v-show='check'>10個以上あります</p>
-    
-</div>
 
+  
+  <style>
+  body{
+  background-color: blue;
+}
+ 
+  </style>
 <script>
-  const vm=new Vue({
-    el:'#app',
-    data(){
-      return{
-        fruits:[
-          {
-          name:'ぶどう',
-          weight:120,
-          num:2
-          },
-          {
-          name:'みかん',
-          weight:120,
-          num:2
-          },
-          {
-          name:'バナナ',
-          weight:120,
-          num:2
-          },
+  'use strict'
+  function changeBoxColor( newColor ) {
+    document.querySelector('body').style.backgroundColor = newColor;
+}
 
-        ]
-      }
-    },
-  computed:{
-    SumNum:function(){
-      
-    }
+ 
 
-    
 
-  }
-  })
 </script>
+
   
 </body>
 </html>
-
 
